@@ -9,7 +9,7 @@
 			<span>AlexBlog</span></NuxtLink
 		>
 		<div class="header__nav">
-			<NuxtLink to="/about"></NuxtLink>
+			<NuxtLink to="/about">About</NuxtLink>
 		</div>
 	</div>
 </template>

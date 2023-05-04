@@ -1,7 +1,7 @@
 <template>
 	<main>
 		<Header />
-		<slot />  
+		<slot />
 	</main>
 </template>
 
@@ -9,8 +9,13 @@
 :root {
 	--white: #ffffff;
 }
+
+a {
+	color: var(--white);
+}
 body {
 	background: #181a29;
+	font-family: 'Roboto Flex', sans-serif;
 }
 
 main {
