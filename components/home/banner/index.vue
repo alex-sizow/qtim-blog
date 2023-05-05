@@ -48,8 +48,14 @@ const props = defineProps({
 		width: 80%;
 		object-fit: cover;
 		object-position: top;
-
+		transition: 0.8s;
 		border-radius: 10px;
+	}
+
+	&__image:hover {
+		transition: 0.8s;
+		object-position: center;
+		scale: 0.98;
 	}
 
 	&__description {
@@ -65,6 +71,7 @@ const props = defineProps({
 		align-items: flex-start;
 		padding: 40px;
 		gap: 24px;
+		transition: 0.2s;
 		&_title {
 			font-weight: 600;
 			font-size: 36px;
@@ -73,6 +80,10 @@ const props = defineProps({
 		&_date {
 			color: var(--gray);
 		}
+	}
+	&__description:hover {
+		transition: 0.4s;
+		scale: 1.1;
 	}
 }
 </style>

@@ -22,15 +22,21 @@ const createDate = (time: string) => {
 </script>
 
 <template>
-	<div>
+	<div class="home">
 		<Banner
 			:slug="`/posts/${banner.id}`"
 			:image="banner.image"
 			:title="banner.title"
 			:date="createDate(banner.createdAt)"
 			:preview="banner.preview"></Banner>
-		<PostList></PostList>
+		<PostList :posts="data.slice(0, 10)"></PostList>
 	</div>
 </template>
 
-<style></style>
+<style lang="scss">
+.home {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+</style>
