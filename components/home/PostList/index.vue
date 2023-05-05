@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import PostItem from '@/components/home/PostList/PostItem';
 
 const props = defineProps({
@@ -6,6 +6,18 @@ const props = defineProps({
 		type: Array,
 	},
 });
+
+const createDate = (time: string) => {
+	const date = new Date(time);
+	const options: object = {
+		month: 'long',
+		day: 'numeric',
+		hour: 'numeric',
+		minute: 'numeric',
+	};
+	const formatter = new Intl.DateTimeFormat('ru-RU', options);
+	return formatter.format(date);
+};
 </script>
 
 <template>
@@ -14,7 +26,10 @@ const props = defineProps({
 		<div class="posts__items">
 			<PostItem
 				v-for="(post, index) in posts"
-				:key="index"></PostItem>
+				:key="index"
+				:title="post.title"
+				:date="createDate(post.createdAt)"
+				:slug="`posts/${post.id}`"></PostItem>
 		</div>
 	</div>
 </template>

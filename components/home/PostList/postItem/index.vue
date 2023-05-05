@@ -1,22 +1,41 @@
-<script setup></script>
+<script setup>
+const props = defineProps({
+	image: {
+		type: String,
+	},
+	title: {
+		type: String,
+	},
+	slug: {
+		type: String,
+	},
+	date: {
+		type: String,
+	},
+});
+</script>
 
 <template>
-	<div class="post-item">
+	<NuxtLink
+		:to="slug"
+		class="post-item">
 		<img
 			class="post-item__image"
 			src="@/assets/images/aperol.jpg"
 			alt="" />
 
-		<div class="post-item__title">title</div>
+		<div class="post-item__title">{{ title }}</div>
 		<div class="post-item__description">
 			<img
 				class="post-item__description_image"
 				src="@/assets/images/wolf.webp"
 				alt="" />
 			<span>Aperol Spitz</span>
-			<span class="post-item__description_date">дата</span>
+			<span class="post-item__description_date">{{
+				date
+			}}</span>
 		</div>
-	</div>
+	</NuxtLink>
 </template>
 
 <style lang="scss">
@@ -45,8 +64,10 @@
 
 	&__description {
 		margin-top: 14px;
+		padding: 0 5px;
 		display: flex;
 		align-items: center;
+
 		gap: 12px;
 		&_image {
 			width: 36px;
@@ -56,6 +77,7 @@
 
 		&_date {
 			color: var(--gray);
+			margin-left: 24px;
 		}
 	}
 }
