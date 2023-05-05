@@ -11,7 +11,8 @@
 		"**/pnpm-lock.yaml": true,
 		"**/.npmrc": true,
 		"**/.vscode": true,
-		"**/tsconfig.json": true
+		"**/tsconfig.json": true,
+		"**/public": true
 	},
 	"explorerExclude.backup": {}
 }

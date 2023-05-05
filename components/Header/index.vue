@@ -9,12 +9,16 @@
 			<span>AlexBlog</span></NuxtLink
 		>
 		<div class="header__nav">
+			<NuxtLink to="/">Home</NuxtLink>
 			<NuxtLink to="/about">About</NuxtLink>
 		</div>
+		<div class="header__search"><VInput></VInput></div>
 	</div>
 </template>
 
-<script setup></script>
+<script setup>
+import VInput from '../ui/VInput.vue';
+</script>
 
 <style lang="scss" scoped>
 .header {
@@ -31,13 +35,13 @@
 		align-items: center;
 		gap: 9px;
 		span {
-			font-weight: 500;
+			font-weight: 600;
 		}
 	}
 
 	&__nav {
 		display: flex;
-		gap: 10px;
+		gap: 15px;
 	}
 }
 </style>
